@@ -48,6 +48,6 @@ sources in EditSource <++= baseDirectory.map(d => (d / "deploy" / "kubernetes" *
 targetDirectory in EditSource <<= baseDirectory(_ / "target" / "kubernetes")
 variables in EditSource += ("version", version.value)
 
-concurrentRestrictions in Global += Tags.limit(Tags.Test, 1)
+//concurrentRestrictions in Global += Tags.limit(Tags.Test, 1)
 sbt.Keys.fork in Test := false
 
