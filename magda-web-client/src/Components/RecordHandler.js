@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 import { fetchDatasetFromRegistry, fetchDistributionFromRegistry } from '../actions/recordActions';
 import Tabs from '../UI/Tabs';
 import {config} from '../config';
+import {plugins} from '../plugins';
 import { Link } from 'react-router';
 import ErrorHandler from '../Components/ErrorHandler';
 import CustomIcons from '../UI/CustomIcons';
@@ -87,12 +88,16 @@ class RecordHandler extends React.Component {
       if(this.props.datasetFetchError){
         return <ErrorHandler errorCode={this.props.datasetFetchError}/>;
       }
+
+      const datasetTabsFromPlugs = plugins.datasetTabs.map(item => ({id: item.id, name: item.name, isActive: item.checkActive(this.props.dataset)}));
+
       const datasetTabs = [
         {id: 'details', name: 'Details', isActive: true},
         {id:  'discussion', name: 'Discussion', isActive: !config.disableAuthenticationFeatures},
-        {id: 'publisher', name: 'About ' + publisherName, isActive: publisherId},
-        {id: 'visualisation', name: 'Visualization', isActive: true}
+        {id: 'publisher', name: 'About ' + publisherName, isActive: publisherId}, 
+        ...datasetTabsFromPlugs
       ];
+
       return (
         <div>
 

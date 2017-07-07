@@ -31,7 +31,7 @@ import { staticPageRegister } from "./content/register";
 import DatasetDetails from "./Dataset/DatasetDetails";
 import DatasetDiscussion from "./Dataset/DatasetDiscussion";
 import DatasetPublisher from "./Dataset/DatasetPublisher";
-import DatasetVisualisation from './Dataset/DatasetVisualisation';
+
 
 import ProjectsViewer from "./Project/ProjectsViewer";
 import ProjectDetails from "./Project/ProjectDetails";
@@ -43,6 +43,7 @@ import PublisherDetails from "./Publisher/PublisherDetails";
 import DistributionDetails from "./Dataset/DistributionDetails";
 import DistributionMap from "./Dataset/DistributionMap";
 import DistributionChart from "./Dataset/DistributionChart";
+import {plugins} from './plugins';
 import { requestWhoAmI } from "./actions/userManagementActions";
 
 // eslint-disable-next-line
@@ -68,9 +69,7 @@ browserHistory.listen(recordNewRoute);
 function loadDefaultData(store) {
   store.dispatch(requestWhoAmI());
 }
-
 // If you add a new top-level route below, you must also add it to src/index.ts in magda-web-server!
-
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
@@ -87,7 +86,11 @@ ReactDOM.render(
           <Route path="details" component={DatasetDetails} />
           <Route path="discussion" component={DatasetDiscussion} />
           <Route path="publisher" component={DatasetPublisher} />
-          <Route path="visualisation" component={DatasetVisualisation} />
+          {
+            plugins.datasetTabs.map(item =>
+              <Route path={item.id} component={item.Component} key={item.id}/>
+            )
+          }
         </Route>
         <Route
           path="dataset/:datasetId/distribution/:distributionId"
