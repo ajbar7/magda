@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import { fetchDatasetFromRegistry, fetchDistributionFromRegistry } from '../actions/recordActions';
 import Tabs from '../UI/Tabs';
 import {config} from '../config';
-import {plugins} from '../plugins';
+import {plugins} from '../Plugins/plugins';
 import { Link } from 'react-router';
 import ErrorHandler from '../Components/ErrorHandler';
 import CustomIcons from '../UI/CustomIcons';
@@ -94,7 +94,7 @@ class RecordHandler extends React.Component {
       const datasetTabs = [
         {id: 'details', name: 'Details', isActive: true},
         {id:  'discussion', name: 'Discussion', isActive: !config.disableAuthenticationFeatures},
-        {id: 'publisher', name: 'About ' + publisherName, isActive: publisherId}, 
+        {id: 'publisher', name: 'About ' + publisherName, isActive: publisherId},
         ...datasetTabsFromPlugs
       ];
 

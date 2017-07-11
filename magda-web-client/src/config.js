@@ -25,6 +25,7 @@ export const config = {
     fallbackApiHost + "api/v0/discussions",
   rssUrl:
     "https://nationalmap.gov.au/proxy/_0d/https://blog.data.gov.au/blogs/rss.xml",
+  proxy: "https://nationalmap.gov.au/proxy/_0d/",
   facetListSize: 5,
   resultsPerPage: 10,
   descriptionLength: 50,
