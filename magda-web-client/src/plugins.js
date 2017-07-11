@@ -1,4 +1,5 @@
-import DatasetVisualisation from '../DatasetVisualisation';
+import DatasetVisualisation from '../plugins/DatasetVisualisation';
+debugger
 
 
 export const plugins = {
