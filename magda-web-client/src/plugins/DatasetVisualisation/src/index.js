@@ -4,8 +4,8 @@ import fetch from 'isomorphic-fetch'
 import VegaLite from 'react-vega-lite';
 import ReactTable from 'react-table';
 import JsonForm from 'react-json';
-import './ReactTable.css';
-import './DatasetVisualisation.css'
+// import './ReactTable.css';
+// import './DatasetVisualisation.css'
 
 const defaultSpec = {
   "description": "Example data",
