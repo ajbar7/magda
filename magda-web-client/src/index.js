@@ -41,7 +41,7 @@ import PublisherDetails from "./Publisher/PublisherDetails";
 import DistributionDetails from "./Dataset/DistributionDetails";
 import DistributionMap from "./Dataset/DistributionMap";
 import DistributionChart from "./Dataset/DistributionChart";
-import {plugins} from './Plugins/plugins';
+import {plugins} from './plugins'
 import { requestWhoAmI } from "./actions/userManagementActions";
 
 // eslint-disable-next-line

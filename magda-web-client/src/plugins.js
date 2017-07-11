@@ -1,4 +1,5 @@
-import DatasetVisualisation from './DatasetVisualisation/DatasetVisualisation';
+import DatasetVisualisation from '../DatasetVisualisation';
+
 
 export const plugins = {
   datasetTabs: [

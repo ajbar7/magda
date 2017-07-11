@@ -4,7 +4,7 @@ import fetch from 'isomorphic-fetch'
 import VegaLite from 'react-vega-lite';
 import ReactTable from 'react-table';
 import JsonForm from 'react-json';
-import '../UI/ReactTable.css';
+import './ReactTable.css';
 import './DatasetVisualisation.css'
 
 const defaultSpec = {

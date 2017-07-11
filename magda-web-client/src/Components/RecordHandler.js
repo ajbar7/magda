@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import { fetchDatasetFromRegistry, fetchDistributionFromRegistry } from '../actions/recordActions';
 import Tabs from '../UI/Tabs';
 import {config} from '../config';
-import {plugins} from '../Plugins/plugins';
+import {plugins} from '../plugins';
 import { Link } from 'react-router';
 import ErrorHandler from '../Components/ErrorHandler';
 import CustomIcons from '../UI/CustomIcons';
